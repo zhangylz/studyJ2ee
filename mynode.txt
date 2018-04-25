@@ -1,0 +1,5 @@
+1. Tomcat安装
+   需要配置参数有 CATALINA_HOME、CATALINA_BASE、JAVA_HOME、JAVA_BASE
+   前面两个是 tomcat所在的根路径，后面两个是JDK所在的根路径
+2. 启动tomcat， 在bin文件下的startup.bat；配置参数在conf/server.xml;
+   添加 角色用户在conf/tomcat-users.xml中
