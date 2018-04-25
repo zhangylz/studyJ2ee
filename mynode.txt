@@ -3,3 +3,7 @@
    前面两个是 tomcat所在的根路径，后面两个是JDK所在的根路径
 2. 启动tomcat， 在bin文件下的startup.bat；配置参数在conf/server.xml;
    添加 角色用户在conf/tomcat-users.xml中
+3. 使用tomcat的控制台部署web应用
+   managerApp->Deploy contextPath /name WAR or Directory URL: path
+   DEPLOY 后会发现在tomcat 的webapps下多了 name文件夹；work/Catalina/localhost下多了aaa文件夹
+   manageer/org/apache/jsp/下多了两个文件 index_jsp.class index_jsp.java
