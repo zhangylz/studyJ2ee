@@ -7,3 +7,34 @@
    managerApp->Deploy contextPath /name WAR or Directory URL: path
    DEPLOY 后会发现在tomcat 的webapps下多了 name文件夹；work/Catalina/localhost下多了aaa文件夹
    manageer/org/apache/jsp/下多了两个文件 index_jsp.class index_jsp.java
+4. 在ubuntu下解决 apt-get 安装的 安装包依赖问题
+   sudo apt --fix-broken install
+	为了给tensortflow使用需要使用linux 64位安装系统，推荐使用ubuntu16.04 64位
+	sudo apt-get install python-numpy swig python-dev python-wheel #安装第三方库
+	sudo apt-get install git
+5. 在ubuntu上更换 /etc/apt/sources.list中的软件源，替换原文件
+deb http://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse 
+deb http://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse 
+deb http://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse 
+deb http://mirrors.163.com/ubuntu/ xenial-proposed main restricted universe multiverse 
+deb http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse 
+deb-src http://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse 
+deb-src http://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse 
+deb-src http://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse 
+deb-src http://mirrors.163.com/ubuntu/ xenial-proposed main restricted universe multiverse 
+deb-src http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse
+6. 在ubuntu上更换输入法
+udo apt install fcitx fcitx-googlepinyin fcitx-table-wbpy fcitx-pinyin fcitx-sunpinyin
+重新启动设备
+7. 重新配置 gitlab上的 私钥
+重新生成ssh密钥对
+ssh-keygen -t rsa -C "xxx@xxx.com"
+chmod 0700 ~/.ssh
+chmod 0600 ~/.ssh/id_rsa* 
+验证 ssh -v git@gitlab.uc888.cn
+8. git 命令行相关操作
+git branch -a 查看所有分支
+git checkout -b v0.9rc1 origin/v0.9rc1 创建新分支
+git branch 查看当前分支
+git checkout master 切回主分支
+
