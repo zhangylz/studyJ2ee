@@ -37,4 +37,34 @@ git branch -a 查看所有分支
 git checkout -b v0.9rc1 origin/v0.9rc1 创建新分支
 git branch 查看当前分支
 git checkout master 切回主分支
+9. git 拉取代码后，报内存越界
+git config --global pack.threads 1 git 
+config --global pack.deltaCacheSize = 128m 
+git config --global pack.windowMemory 50m 
+10. git 打tag
+10.1 显示
+	所有标签
+	git tag
+	过滤标签
+	git tag -l '2.1.*'
+10.2 创建
+	轻量标签
+	git tag tagname
+	附注标签
+	git tag -a tagname '备注信息'
+10.3 切换标签
+	git checkout [tagname]
+10.4 查看标签信息
+	git show tagname
+10.5 删除标签
+	git tag -d tagname
+10.6 commit
+    需要知道提交对象的校验和 (通过git log获取)
+	补打标签
+	git tag -a tagname 9fbc3d0
+	                   校验和
+10.7 标签发布
+	git push origin tagname #将标签提交到git服务器
+	git push origin -tags #将本地所有标签一次性提交到git服务器
+
 
