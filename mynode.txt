@@ -66,5 +66,11 @@ git config --global pack.windowMemory 50m
 10.7 标签发布
 	git push origin tagname #将标签提交到git服务器
 	git push origin -tags #将本地所有标签一次性提交到git服务器
+10.8 测试模板导出地址 192.168.20.102
+ssh -l root  192.168.20.102
+password:javjav
+10.9 git命令
+git diff --name-only 
+git status
 
 
