@@ -78,6 +78,8 @@ ps -ef | grep gunicorn
 pkill gunicorn
 启动
 gunicorn -b 192.168.20.102:9000 -w 4 -D -p /var/run/gunicorn.pid --log-level debug --error-logfile /var/log/gunicorn_error.log --log-file /var/log/gunicorn.log CreateMJTemp:app
+10.11 git 本地 commit 回滚
+git reset --hard HEAD~num 其中num为数字， 1 代表 取消上一次 2 代表取消上两次...
 11. dotnet 环境安装
     11.1 .net sdk 安装 https://www.microsoft.com/net/learn/get-started/windows
     11.2 postman api请求工具 https://app.getpostman.com/app/download/win64
