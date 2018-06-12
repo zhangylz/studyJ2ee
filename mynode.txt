@@ -68,6 +68,9 @@ git config --global pack.windowMemory 50m
 	git push origin -tags #将本地所有标签一次性提交到git服务器
 10.8 测试模板导出地址 192.168.20.102
 ssh -l root  192.168.20.102
+远程访问 ssh-add 报错 Could not open a connection to your authentication agent.
+执行 ssh-agent bash 执行 ssh-add命令即可。
+
 password:javjav
 10.9 git命令
 git diff --name-only 
@@ -127,3 +130,28 @@ https://blog.csdn.net/sD7O95O/article/details/78511141?locationNum=8&fps=1
 
 zhangyanlei520520@gmail.com xyz_123456
 www.packtpub.com   email is above, password Xx123456
+
+15. ubuntu 上 更新pip 到版本 10.0.1 报错，解决方法
+The bug is found in pip 10.0.0.
+In linux you need to modify file: /usr/bin/pip from:
+from pip import main
+if __name__ == '__main__':
+    sys.exit(main())
+to this:
+from pip import __main__
+if __name__ == '__main__':
+    sys.exit(__main__._main())
+	
+pip install uwsgi --user -U
+
+ubutnu下运行 直接使用
+安装 gunicorn 即可运行
+gunicorn -w4 -b0.0.0.0:9000 CreateMJTemp:app
+
+16. pop install Failed to connect to GitHub to update the CocoaPods/Specs specs repo - Please check if you are offline, or that GitHub is down
+https://blog.csdn.net/h386926074/article/details/79488545
+17. 编译 Xcode -lcocos2dx iOS.a 缺少库，先编译cocos2dx项目，在build/build/cocos2d_libs.build/Debug-iphoneos/libcocos2d iOS.build/Object-normal
+下面根据自己的平台选择相应的 库。
+
+
+
