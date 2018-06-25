@@ -2,7 +2,7 @@ http://www.lua.org/source/5.1/
 
 Recommended reading order:
 
-lmathlib.c, lstrlib.c: get familiar with the external C API. Don't bother with the pattern matcher though. Just the easy functions.
+lmathlib.c--ok, lstrlib.c: get familiar with the external C API. Don't bother with the pattern matcher though. Just the easy functions.
 
 lapi.c: Check how the API is implemented internally. Only skim this to get a feeling for the code. Cross-reference to lua.h and luaconf.h as needed.
 
