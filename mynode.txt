@@ -1,4 +1,4 @@
-1. Tomcat安装
+﻿1. Tomcat安装
    需要配置参数有 CATALINA_HOME、CATALINA_BASE、JAVA_HOME、JAVA_BASE
    前面两个是 tomcat所在的根路径，后面两个是JDK所在的根路径
 2. 启动tomcat， 在bin文件下的startup.bat；配置参数在conf/server.xml;
@@ -70,7 +70,7 @@ git config --global pack.windowMemory 50m
 ssh -l root  192.168.20.102
 远程访问 ssh-add 报错 Could not open a connection to your authentication agent.
 执行 ssh-agent bash 执行 ssh-add命令即可。
-
+ssh -l root  192.168.20.102
 password:javjav
 10.9 git命令
 git diff --name-only 
@@ -152,6 +152,42 @@ gunicorn -w4 -b0.0.0.0:9000 CreateMJTemp:app
 https://blog.csdn.net/h386926074/article/details/79488545
 17. 编译 Xcode -lcocos2dx iOS.a 缺少库，先编译cocos2dx项目，在build/build/cocos2d_libs.build/Debug-iphoneos/libcocos2d iOS.build/Object-normal
 下面根据自己的平台选择相应的 库。
+
+18. 南京麻将 风顺判断
+function GamePlaying:calculateWindSame(pos, byteCard)
+    if tbWindSameCards[pos] == nil then
+        tbWindSameCards[pos] = {}
+    end
+    if byteCard >= MJConst.Zi1 and byteCard <= MJConst.Zi4 then
+        local cnt = #tbWindSameCards[pos]
+		local index = table.keyof(tbWindSameCards[pos], byteCard)
+		if index == nil then
+			table.insert(tbWindSameCards[pos], byteCard)
+		else
+			if index == cnt then
+				tbWindSameCards[pos] = {}
+				table.insert(tbWindSameCards[pos], byteCard)
+			elseif index < cnt then
+				local temp = deepcopy(tbWindSameCards[pos])
+				tbWindSameCards[pos] = {}
+				for i = index + 1, cnt do
+					table.insert(tbWindSameCards[pos], temp[i])
+				end
+				table.insert(tbWindSameCards[pos], byteCard)
+			end
+		end
+    else
+        tbWindSameCards[pos] = {}
+    end
+	local _cnt = #tbWindSameCards[pos]
+	if _cnt == 4 then
+		tbWindSameCards[pos] = {}
+		return true
+	else
+		return false
+	end
+end
+
 
 
 
